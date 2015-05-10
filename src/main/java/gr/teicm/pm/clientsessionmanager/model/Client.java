@@ -7,24 +7,47 @@ package gr.teicm.pm.clientsessionmanager.model;
 
 import gr.teicm.pm.clientsessionmanager.TimeWatch;
 import java.util.concurrent.TimeUnit;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.Transient;
 
 /**
  *
  * @author user
  */
+@Entity
+@Table(name = "clients")
 public class Client {
+
+    @Id
+    @GeneratedValue
     private Integer id;
     private String name;
     private String caseDetails;
     private Integer chargingRate;
     private long elapsedTime;
     private long price;
+    @Transient
     private TimeWatch watch;
+    @Transient
     Boolean isSessionStarted;
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
     public long getPrice() {
         return price;
     }
-    
+
     public void startSession() {
         if (!isSessionStarted) {
             this.watch = TimeWatch.start();
@@ -39,9 +62,11 @@ public class Client {
             calculateClientCharge();
         }
     }
+
     private void calculateClientCharge() {
-        price=elapsedTime*chargingRate;
+        price = elapsedTime * chargingRate;
     }
+
     public long getElapsedTime() {
         return elapsedTime;
     }
@@ -55,6 +80,7 @@ public class Client {
         caseDetails = "";
         chargingRate = 0;
         elapsedTime = 0;
+        price = 0;
         isSessionStarted = false;
     }
 

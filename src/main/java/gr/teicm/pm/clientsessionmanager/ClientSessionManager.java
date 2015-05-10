@@ -55,7 +55,7 @@ public class ClientSessionManager extends javax.swing.JFrame {
         clientNameLabel = new javax.swing.JLabel();
         caseDetailsLabel = new javax.swing.JLabel();
         caseDetails = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        caseDetailsArea = new javax.swing.JTextArea();
         chargingRateLabel = new javax.swing.JLabel();
         chargingRate = new javax.swing.JTextField();
         startSessionButton = new javax.swing.JToggleButton();
@@ -123,10 +123,10 @@ public class ClientSessionManager extends javax.swing.JFrame {
 
     caseDetailsLabel.setText("case");
 
-    jTextArea1.setColumns(20);
-    jTextArea1.setRows(5);
-    jTextArea1.setText("Case details here");
-    caseDetails.setViewportView(jTextArea1);
+    caseDetailsArea.setColumns(20);
+    caseDetailsArea.setRows(5);
+    caseDetailsArea.setText("Case details here");
+    caseDetails.setViewportView(caseDetailsArea);
 
     chargingRateLabel.setText("charging rate (per hour)");
 
@@ -306,26 +306,17 @@ public class ClientSessionManager extends javax.swing.JFrame {
 
     private void finishSessionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finishSessionButtonActionPerformed
         long passedTimeInSeconds = this.watch.getTime(TimeUnit.SECONDS);
-        controller.getClientDetailsFromForm(clientName.getText(), caseDetails.getToolTipText(), chargingRate.getText(), passedTimeInSeconds);
+        controller.getClientDetailsFromForm(clientName.getText(), caseDetailsArea.getText() , chargingRate.getText(), passedTimeInSeconds);
         showComponent(introPanel);
     }//GEN-LAST:event_finishSessionButtonActionPerformed
 
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        DefaultTableModel model = (DefaultTableModel) clientListTable.getModel();
-        List<Client> clients = controller.getClients();
-        for (Client c : clients) {
-            model.addRow(new Object[]{c.getName(), Long.toString(c.getChargingRate()), Long.toString(c.getElapsedTime()), Long.toString(c.getElapsedTime() * c.getChargingRate())});
-        }
-        Object columnnames[] = {
-            "Client Name", "Charging rate", "Elapsed time", "Price"
-        };
-        clientListTable.setModel(model);
+        clientListTable.setModel(controller.getClientsModel());
         showComponent(clientList);
-
     }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        
         // do something
         //  long passedTimeInMs = watch.getTime();
         //long passedTimeInSeconds = watch.getTime(TimeUnit.SECONDS);
@@ -389,6 +380,7 @@ public class ClientSessionManager extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JScrollPane caseDetails;
+    private javax.swing.JTextArea caseDetailsArea;
     private javax.swing.JLabel caseDetailsLabel;
     private javax.swing.JTextField chargingRate;
     private javax.swing.JLabel chargingRateLabel;
@@ -404,7 +396,6 @@ public class ClientSessionManager extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JPanel lawyerOverview;
     private javax.swing.JPanel newClientSession;
