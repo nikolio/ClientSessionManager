@@ -3,15 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gr.teicm.pm.clientsessionmanager;
+package gr.teicm.pm.clientsessionmanager.ui;
 
-import gr.teicm.pm.clientsessionmanager.controllers.ClientController;
-import gr.teicm.pm.clientsessionmanager.model.Client;
-import java.util.List;
+import gr.teicm.pm.clientsessionmanager.logic.TimeWatch;
+import gr.teicm.pm.clientsessionmanager.logic.controllers.ClientController;
 import java.util.concurrent.TimeUnit;
 import java.lang.Object;
 import javax.swing.JComponent;
-import javax.swing.table.DefaultTableModel;
 import org.apache.commons.lang3.SystemUtils;
 
 /**

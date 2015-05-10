@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gr.teicm.pm.clientsessionmanager;
+package gr.teicm.pm.clientsessionmanager.logic.dao;
 
-import gr.teicm.pm.clientsessionmanager.model.Client;
-import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-import org.hibernate.tool.hbm2ddl.SchemaExport;
-import org.hibernate.tool.hbm2ddl.SchemaExportTask;
 
 /**
  * Hibernate Utility class with a convenient method to get Session Factory
@@ -26,21 +22,6 @@ public class HibernateUtil {
     private static ServiceRegistry serviceRegistry;
 
     static {
-//        try {
-//            // Create the SessionFactory from standard (hibernate.cfg.xml) 
-//            // config file.
-//            // sessionFactory = new AnnotationConfiguration().addAnnotatedClass(Client.class).configure().buildSessionFactory();
-//            AnnotationConfiguration config = new AnnotationConfiguration();
-//            config.addAnnotatedClass(Client.class);
-//            config.configure();
-//            new SchemaExport(config).create(true, true);
-//            sessionFactory = config.buildSessionFactory();
-//        } catch (Throwable ex) {
-//            // Log the exception. 
-//            System.err.println("Initial SessionFactory creation failed." + ex);
-//            throw new ExceptionInInitializerError(ex);
-//        }
-
         // loads configuration and mappings
         Configuration configuration = new Configuration().configure();
         ServiceRegistry serviceRegistry

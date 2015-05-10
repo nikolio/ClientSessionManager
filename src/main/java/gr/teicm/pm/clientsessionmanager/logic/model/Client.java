@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gr.teicm.pm.clientsessionmanager.model;
+package gr.teicm.pm.clientsessionmanager.logic.model;
 
-import gr.teicm.pm.clientsessionmanager.TimeWatch;
+import gr.teicm.pm.clientsessionmanager.logic.TimeWatch;
 import java.util.concurrent.TimeUnit;
 import javax.persistence.Basic;
 import javax.persistence.Column;
