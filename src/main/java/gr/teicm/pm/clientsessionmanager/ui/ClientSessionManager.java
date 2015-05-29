@@ -42,7 +42,6 @@ public class ClientSessionManager extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         containerPanel = new javax.swing.JPanel();
         clientList = new javax.swing.JPanel();
         clientListScrollPane = new javax.swing.JScrollPane();
@@ -59,21 +58,15 @@ public class ClientSessionManager extends javax.swing.JFrame {
         startSessionButton = new javax.swing.JToggleButton();
         finishSessionButton = new javax.swing.JToggleButton();
         lawyerOverview = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        newClient = new javax.swing.JButton();
+        toIntroButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         introPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        label = new javax.swing.JLabel();
+        lawyerButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
-
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         containerPanel.setLayout(new java.awt.CardLayout());
 
@@ -86,7 +79,7 @@ public class ClientSessionManager extends javax.swing.JFrame {
     ));
     clientListScrollPane.setViewportView(clientListTable);
 
-    backButton.setText("Overview");
+    backButton.setText("Go Back");
     backButton.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             backButtonActionPerformed(evt);
@@ -193,17 +186,24 @@ public class ClientSessionManager extends javax.swing.JFrame {
 
     containerPanel.add(newClientSession, "card7");
 
-    jButton2.setText("New Client Session");
-    jButton2.addActionListener(new java.awt.event.ActionListener() {
+    newClient.setText("New Client Session");
+    newClient.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jButton2ActionPerformed(evt);
+            newClientActionPerformed(evt);
         }
     });
 
-    jToggleButton3.setText("Show Client Sessions");
-    jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+    toIntroButton.setText("Go Back");
+    toIntroButton.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jToggleButton3ActionPerformed(evt);
+            toIntroButtonActionPerformed(evt);
+        }
+    });
+
+    jButton1.setText("Show Client Sessions");
+    jButton1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton1ActionPerformed(evt);
         }
     });
 
@@ -212,30 +212,37 @@ public class ClientSessionManager extends javax.swing.JFrame {
     lawyerOverviewLayout.setHorizontalGroup(
         lawyerOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(lawyerOverviewLayout.createSequentialGroup()
-            .addGap(21, 21, 21)
-            .addComponent(jButton2)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-            .addComponent(jToggleButton3)
-            .addGap(24, 24, 24))
+            .addGroup(lawyerOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(lawyerOverviewLayout.createSequentialGroup()
+                    .addGap(21, 21, 21)
+                    .addComponent(newClient)
+                    .addGap(36, 36, 36)
+                    .addComponent(jButton1))
+                .addGroup(lawyerOverviewLayout.createSequentialGroup()
+                    .addGap(151, 151, 151)
+                    .addComponent(toIntroButton)))
+            .addContainerGap(41, Short.MAX_VALUE))
     );
     lawyerOverviewLayout.setVerticalGroup(
         lawyerOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(lawyerOverviewLayout.createSequentialGroup()
             .addGap(132, 132, 132)
             .addGroup(lawyerOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jButton2)
-                .addComponent(jToggleButton3))
-            .addContainerGap(120, Short.MAX_VALUE))
+                .addComponent(newClient)
+                .addComponent(jButton1))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+            .addComponent(toIntroButton)
+            .addGap(31, 31, 31))
     );
 
     containerPanel.add(lawyerOverview, "card5");
 
-    jLabel1.setText("I am ");
+    label.setText("I am a");
 
-    jButton3.setText("Lawyer");
-    jButton3.addActionListener(new java.awt.event.ActionListener() {
+    lawyerButton.setText("Lawyer");
+    lawyerButton.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jButton3ActionPerformed(evt);
+            lawyerButtonActionPerformed(evt);
         }
     });
 
@@ -247,19 +254,19 @@ public class ClientSessionManager extends javax.swing.JFrame {
             .addGroup(introPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(introPanelLayout.createSequentialGroup()
                     .addGap(33, 33, 33)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(introPanelLayout.createSequentialGroup()
                     .addGap(152, 152, 152)
-                    .addComponent(jButton3)))
+                    .addComponent(lawyerButton)))
             .addContainerGap(85, Short.MAX_VALUE))
     );
     introPanelLayout.setVerticalGroup(
         introPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(introPanelLayout.createSequentialGroup()
             .addGap(37, 37, 37)
-            .addComponent(jLabel1)
+            .addComponent(label)
             .addGap(18, 18, 18)
-            .addComponent(jButton3)
+            .addComponent(lawyerButton)
             .addContainerGap(183, Short.MAX_VALUE))
     );
 
@@ -270,11 +277,6 @@ public class ClientSessionManager extends javax.swing.JFrame {
     layout.setHorizontalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addComponent(containerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(159, 159, 159)
-                .addComponent(jButton1)
-                .addContainerGap(160, Short.MAX_VALUE)))
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,20 +284,15 @@ public class ClientSessionManager extends javax.swing.JFrame {
             .addContainerGap()
             .addComponent(containerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addContainerGap())
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addComponent(jButton1)
-                .addContainerGap(149, Short.MAX_VALUE)))
     );
 
     pack();
     setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void newClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newClientActionPerformed
         showComponent(newClientSession);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_newClientActionPerformed
 
     private void startSessionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startSessionButtonActionPerformed
         // start time
@@ -304,30 +301,26 @@ public class ClientSessionManager extends javax.swing.JFrame {
 
     private void finishSessionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finishSessionButtonActionPerformed
         long passedTimeInSeconds = this.watch.getTime(TimeUnit.SECONDS);
-        controller.getClientDetailsFromForm(clientName.getText(), caseDetailsArea.getText() , chargingRate.getText(), passedTimeInSeconds);
+        controller.getClientDetailsFromForm(clientName.getText(), caseDetailsArea.getText(), chargingRate.getText(), passedTimeInSeconds);
         showComponent(introPanel);
     }//GEN-LAST:event_finishSessionButtonActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        clientListTable.setModel(controller.getClientsModel());
-        showComponent(clientList);
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        // do something
-        //  long passedTimeInMs = watch.getTime();
-        //long passedTimeInSeconds = watch.getTime(TimeUnit.SECONDS);
-        // jLabel1.setText(Long.toString(passedTimeInSeconds));
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        // TODO add your handling code here:
+        showComponent(lawyerOverview);
     }//GEN-LAST:event_backButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void lawyerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lawyerButtonActionPerformed
         showComponent(lawyerOverview);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_lawyerButtonActionPerformed
+
+    private void toIntroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toIntroButtonActionPerformed
+        showComponent(introPanel);
+    }//GEN-LAST:event_toIntroButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        clientListTable.setModel(controller.getClientsModel());
+        showComponent(clientList);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -391,12 +384,12 @@ public class ClientSessionManager extends javax.swing.JFrame {
     private javax.swing.JToggleButton finishSessionButton;
     private javax.swing.JPanel introPanel;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JLabel label;
+    private javax.swing.JButton lawyerButton;
     private javax.swing.JPanel lawyerOverview;
+    private javax.swing.JButton newClient;
     private javax.swing.JPanel newClientSession;
     private javax.swing.JToggleButton startSessionButton;
+    private javax.swing.JButton toIntroButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -13,7 +13,7 @@
         <!-- create create-drop validate update -->
         <property name="hbm2ddl.auto">validate</property>
 
-        <mapping class="gr.teicm.pm.clientsessionmanager.model.Client" />
+        <mapping class="gr.teicm.pm.clientsessionmanager.logic.model.Client" />
         
         
     </session-factory>
