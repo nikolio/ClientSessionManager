@@ -8,3 +8,4 @@ A tool to manage and simplify the billing of clients
 - [ ] use prop file for db creds
 - [ ] use Derby ?
 - [ ] use JPA
+- [ ] add DB Settings UI    
